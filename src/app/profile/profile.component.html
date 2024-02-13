@@ -1,19 +1,18 @@
-<div class="container" *ngIf="currentUser; else loggedOut">
-  <header class="jumbotron">
-    <h3>
+<div class="container mx-auto mt-8 p-6 bg-gray-800 text-gray-300 shadow-md rounded-md" style="width: 300px;">
+  <div class="flex justify-center items-center mb-4">
+      <div class="rounded-full overflow-hidden border-4 border-blue-500">
+          <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile" class="w-24 h-24" />
+      </div>
+  </div>
+  <header class="text-2xl font-bold mb-4">
       <strong>{{ currentUser.name }}</strong> Profile
-    </h3>
   </header>
-  <p>
-    <strong>Email:</strong>
-    {{ currentUser.email }}
+  <p class="mb-4">
+      <strong>Email:</strong> {{ currentUser.email }}
   </p>
-  <strong>Role</strong>
-  <ul>
-    <li>
-      {{ currentUser.role }}
-    </li>
-  </ul>
+  <p>
+      <strong>Role:</strong> {{ currentUser.role }}
+  </p>
 </div>
 
 <ng-template #loggedOut>

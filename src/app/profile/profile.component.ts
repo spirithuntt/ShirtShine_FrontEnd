@@ -8,6 +8,7 @@ import { StorageService } from '../services/storage.service';
 })
 export class ProfileComponent implements OnInit{
   currentUser: any;
+role: any;
 
   constructor(private StorageService: StorageService) { }
 

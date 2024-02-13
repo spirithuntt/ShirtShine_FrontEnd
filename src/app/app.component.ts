@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private roles: string[] = [];
+  private role?: string;
+  private token?: string;
   isLoggedIn = false;
   showAdminBoard = false;
   showSuperAdminBoard = false;
@@ -22,12 +23,15 @@ export class AppComponent {
     this.isLoggedIn = this.storageService.isLoggedIn();
 
     if (this.isLoggedIn) {
-       const user = this.storageService.getUser();
-      // this.roles = user.roles;
-      // this.showAdminBoard = this.roles.includes('ADMIN');
-      // this.showSuperAdminBoard = this.roles.includes('SUPER_ADMIN');
-
-      // this.name = user.name;
+      const user = this.storageService.getUser();
+      this.role = user.role;
+      this.name = user.name;
+      if (this.role === 'ADMIN') {
+        this.showAdminBoard = true;
+      }
+      if (this.role === 'SUPER_ADMIN') {
+        this.showSuperAdminBoard = true;
+      }
     }
   }
 

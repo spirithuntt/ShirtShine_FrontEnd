@@ -7,17 +7,17 @@
       <div class="bg-gray-700 p-4 rounded-md">
           <h3 class="text-lg font-semibold mb-2">Get Roles</h3>
           <div class="overflow-x-auto">
-              <table class="min-w-full bg-white border border-gray-300">
+              <table class="min-w-full bg-white border border-gray-300 text-blue-800">
                   <!-- Table header -->
                   <thead>
                       <tr>
-                          <th class="py-2 px-4 border-b text-black-50">Role Name</th>
+                          <th class="py-2 px-4 border-b text-blue-800 ">Role Name</th>
                           <!-- Add more columns as needed -->
                       </tr>
                   </thead>
                   <!-- Table body -->
                   <tbody>
-                    <tr *ngFor="let role of roles">
+                    <tr *ngFor="let role of roles" class="text-blue-800">
                       <td>{{ role.name }}</td>
                     </tr>
                   </tbody>

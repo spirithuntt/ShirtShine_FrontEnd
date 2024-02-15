@@ -1,7 +1,6 @@
 <nav class="bg-cover bg-center bg-gray-800 text-gray-300 shadow-md p-4">
   <div class="container mx-auto flex items-center justify-between">
-    <img src="assets/images/shirtShineLogo.png" alt="logo" class="w-12 h-12 mr-2" />
-
+    <img src="assets/images/ShirtShineLogo.png" alt="logo" class="w-28" />
     <ul class="flex items-center space-x-4" routerLinkActive="active">
       <li class="nav-item">
         <a href="/home" class="nav-link hover:text-white hover:underline">Home</a>
@@ -14,6 +13,9 @@
       </li>
       <li class="nav-item" *ngIf="isLoggedIn">
         <a href="/user" class="nav-link hover:text-white hover:underline">User</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a href="/roles" class="nav-link hover:text-white hover:underline">Roles</a>
       </li>
     </ul>
 
@@ -36,6 +38,6 @@
     </ul>
   </div>
 </nav>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

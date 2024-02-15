@@ -14,6 +14,7 @@ import { BoardSuperAdminComponent } from './board-super-admin/board-super-admin.
 
 import { httpInterceptorProviders } from './helpers/http.interceptor';
 import { AuthService } from './services/auth.service';
+import { RoleComponent } from './role/role.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,15 @@ import { AuthService } from './services/auth.service';
     HomeComponent,
     ProfileComponent,
     BoardAdminComponent,
-    BoardSuperAdminComponent
+    BoardSuperAdminComponent,
+    RoleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [httpInterceptorProviders, AuthService],
   bootstrap: [AppComponent]

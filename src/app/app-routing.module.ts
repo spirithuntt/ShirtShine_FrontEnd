@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { RoleComponent } from './role/role.component';
+import { RoleResolver } from './resolver/role/role.resolver';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,7 +15,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'super-admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver } },
 ];
 
 @NgModule({

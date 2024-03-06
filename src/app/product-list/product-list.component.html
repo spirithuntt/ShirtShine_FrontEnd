@@ -1,86 +1,36 @@
     <header class="products-header">
-        <!-- Include static content for the header if any -->
+      <!-- Include static content for the header if any -->
     </header>
 
 
 
     <div class="my-4 py-5 d-flex justify-content-center">
-        <h1 class="fs-1">Our <span> Products</span></h1>
+      <h1 class="fs-1">Our <span> Products</span></h1>
     </div>
-
-    <div class="row m-0">
-        <!-- Replace the dynamic content in the product loop with static content -->
-        <div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 mb-5">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="your_product_url" class="image">
-                        <img class="pic-1" src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=1000">
-                    </a>
-                    <span class="product-discount-label">-33%</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Product Name</a></h3>
-                    <div class="price">100dh</div>
-                    <a class="add-to-cart" href="your_add_to_cart_url">+ Add to cart</a>
-                    <!-- Include static content for the add to cart form if any -->
-                </div>
+    <div class="d-flex align-content-around flex-wrap row row-cols-4 mx-auto" style="width: 150%;">
+      <div *ngFor="let product of products" class="product-card-container row m-0 col">
+        <div class="col-md-8 col-lg-6 col-sm-10 col-xs-12 mb-5">
+          <div class="product-grid">
+            <div class="product-image">
+              <a href="your_product_url" class="image">
+                <img class="pic-1"
+                  src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=1000">
+              </a>
+              <span class="product-discount-label">{{ product.promotion }}%</span>
             </div>
+            <div class="product-content">
+              <h3 class="title"><a href="#">{{ product.name }}</a></h3>
+              <div class="price">{{ product.price }}</div>
+              <a class="add-to-cart" href="your_add_to_cart_url">+ Add to cart</a>
+            </div>
+          </div>
         </div>
         <!-- End product loop -->
 
+      </div>*
     </div>
 
-    <footer class="border-top p-5 mt-5">
-        <div class="row d-flex justify-content-around">
-            <div class="col-lg-3 mb-3">
-                <h1 class="navbar-brand text-black">Shirt <span>Shine</span></h1>
-                <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                    has been the industry's standard dummy text ever since the 1500s,</p>
-            </div>
-
-            <div class="col-6 col-md-2 mb-3">
-                <h5><span>About</span></h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="your_about_link" class="nav-link p-0 text-muted">About</a></li>
-                    <li class="nav-item mb-2"><a href="your_features_link" class="nav-link p-0 text-muted">Features</a>
-                    </li>
-                    <li class="nav-item mb-2"><a href="your_blogs_link" class="nav-link p-0 text-muted">News & Blogs</a>
-                    </li>
-                    <li class="nav-item mb-2"><a href="your_help_link"
-                            class="nav-link p-0 text-muted">Help & Supports</a></li>
-                </ul>
-            </div>
-
-            <div class="col-6 col-md-2 mb-3">
-                <h5><span>Partner with us</span></h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="your_how_we_work_link"
-                            class="nav-link p-0 text-muted">How we work</a></li>
-                    <li class="nav-item mb-2"><a href="your_terms_link"
-                            class="nav-link p-0 text-muted">Terms of service</a></li>
-                    <li class="nav-item mb-2"><a href="your_pricing_link" class="nav-link p-0 text-muted">Pricing</a></li>
-                    <li class="nav-item mb-2"><a href="your_faq_link" class="nav-link p-0 text-muted">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="col-6 col-md-2 mb-3">
-                <h5><span>Support</span></h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="your_address_link"
-                            class="nav-link p-0 text-muted">Akshya Nagar 1st Block 1st Cross, Rammurthy nagar,
-                            Bangalore-560016</a></li>
-                    <li class="nav-item mb-2"><a href="your_phone_link" class="nav-link p-0 text-muted">+1 202-918-2132</a>
-                    </li>
-                    <li class="nav-item mb-2"><a href="your_email_link" class="nav-link p-0 text-muted">beanscene@mail.com</a>
-                    </li>
-                    <li li class="nav-item mb-2"><a href="your_website_link"
-                            class="nav-link p-0 text-muted">www.beanscene.com</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>

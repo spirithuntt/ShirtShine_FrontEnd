@@ -1,29 +1,31 @@
-<div class="container mx-auto mt-12 p-8 bg-gray-800 text-gray-300 shadow-md rounded-md" style="max-width: 400px;">
-  <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="w-24 h-24 rounded-full border-4 border-blue-500 mx-auto mb-6" />
+<div class="container mx-auto mt-12 p-8 bg-light-gray text-dark-gray shadow-md rounded-md"
+  style="max-width: 400px;">
+  <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+    class="w-24 h-24 rounded-full border-4 border-primary mx-auto mb-6" />
 
   <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-      <div class="mb-4">
-          <label for="email" class="block text-sm font-semibold">Email</label>
-          <input type="text" class="form-input w-full text-black" name="email" [(ngModel)]="form.email" required #email="ngModel"
-              [ngClass]="{ 'border-red-500': f.submitted && email.errors }" />
-          <div *ngIf="email.errors && f.submitted" class="text-red-500 text-xs mt-1">Email is required!</div>
+    <div class="mb-4">
+      <label for="email" class="form-label text-sm font-semibold">Email</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && email.errors }" />
+      <div *ngIf="email.errors && f.submitted" class="invalid-feedback">Email is required!</div>
+    </div>
+    <div class="mb-4">
+      <label for="password" class="form-label text-sm font-semibold">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+        #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+      <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+        <div *ngIf="password.errors['required']">Password is required</div>
+        <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
       </div>
-      <div class="mb-4">
-          <label for="password" class="block text-sm font-semibold">Password</label>
-          <input type="password" class="form-input w-full text-black" name="password" [(ngModel)]="form.password" required minlength="6"
-              #password="ngModel" [ngClass]="{ 'border-red-500': f.submitted && password.errors }" />
-          <div *ngIf="password.errors && f.submitted" class="text-red-500 text-xs mt-1">
-              <div *ngIf="password.errors['required']">Password is required</div>
-              <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
-          </div>
-      </div>
-      <div>
-          <button class="bg-blue-500 text-white py-2 px-4 rounded-full">Login</button>
-      </div>
-      <div *ngIf="f.submitted && isLoginFailed" class="text-red-500 text-sm mt-2">Login failed: {{ errorMessage }}</div>
+    </div>
+    <div>
+      <button class="btn backgroud-yellow btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Login</button>
+    </div>
+    <div *ngIf="f.submitted && isLoginFailed" class="text-danger text-sm mt-2">Login failed: {{ errorMessage }}</div>
   </form>
 
-  <div class="text-green-500 text-sm mt-4" *ngIf="isLoggedIn">
-      Logged in as {{ role }}.
+  <div class="text-success text-sm mt-4" *ngIf="isLoggedIn">
+    Logged in as {{ role }}.
   </div>
 </div>

@@ -9,6 +9,7 @@ import { RoleComponent } from './role/role.component';
 import { RoleResolver } from './resolver/role/role.resolver';
 import { adminGuard } from './guard/admin/admin.guard';
 import { authGuard } from './guard/auth/auth.guard';
+import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'super-admin', component: BoardAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , adminGuard],}
+  { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , adminGuard],},
+  {path: 'products', component: ProductListComponent}
 ];
 
 @NgModule({

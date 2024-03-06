@@ -21,7 +21,7 @@ export class RoleResolver implements Resolve<RoleResponseDTO[]> {
           console.error('Access Forbidden. Please check your permissions.');
         }
 
-        return of([]); // Return an empty array or handle the error as needed
+        return of([]); 
       })
     );
   }

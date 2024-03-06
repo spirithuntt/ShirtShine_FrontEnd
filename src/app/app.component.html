@@ -1,43 +1,25 @@
-<nav class="bg-cover bg-center bg-gray-800 text-gray-300 shadow-md p-4">
-  <div class="container mx-auto flex items-center justify-between">
-    <img src="assets/images/ShirtShineLogo.png" alt="logo" class="w-28" />
-    <ul class="flex items-center space-x-4" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/home" class="nav-link hover:text-white hover:underline">Home</a>
-      </li>
-      <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link hover:text-white hover:underline">Admin Board</a>
-      </li>
-      <li class="nav-item" *ngIf="showSuperAdminBoard">
-        <a href="/super-admin" class="nav-link hover:text-white hover:underline">Super Admin Board</a>
-      </li>
-      <li class="nav-item" *ngIf="isLoggedIn">
-        <a href="/user" class="nav-link hover:text-white hover:underline">User</a>
-      </li>
-      <li class="nav-item" *ngIf="isLoggedIn">
-        <a href="/roles" class="nav-link hover:text-white hover:underline">Roles</a>
-      </li>
-    </ul>
 
-    <ul class="flex items-center space-x-4" *ngIf="!isLoggedIn">
-      <li class="nav-item">
-        <a href="/register" class="nav-link hover:text-white hover:underline">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a href="/login" class="nav-link hover:text-white hover:underline">Login</a>
-      </li>
-    </ul>
 
-    <ul class="flex items-center space-x-4" *ngIf="isLoggedIn">
-      <li class="nav-item">
-        <a href="/profile" class="nav-link hover:text-white hover:underline">{{ name }}</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link hover:text-white hover:underline" (click)="logout()">LogOut</a>
-      </li>
-    </ul>
+<style>
+  .text-yellow {
+  color: #f7b924;
+}
+
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+  <div class="container px-5">
+      <a class="navbar-brand" href="index.html"><span class="fw-bolder">Shirt<span class="fw-bolder text-yellow">Shine</span></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="resume.html">Products</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html">Contact Us</a></li>
+          </ul>
+      </div>
   </div>
 </nav>
-<div class="container">
+
+
   <router-outlet></router-outlet>
-</div>
+

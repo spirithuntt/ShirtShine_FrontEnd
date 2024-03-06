@@ -7,22 +7,21 @@
     <div class="my-4 py-5 d-flex justify-content-center">
       <h1 class="fs-1">Our <span> Products</span></h1>
     </div>
-    <div class="d-flex align-content-around flex-wrap row row-cols-4 mx-auto" style="width: 150%;">
-      <div *ngFor="let product of products" class="product-card-container row m-0 col">
-        <div class="col-md-8 col-lg-6 col-sm-10 col-xs-12 mb-5">
-          <div class="product-grid">
-            <div class="product-image">
-              <a href="your_product_url" class="image">
-                <img class="pic-1"
-                  src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=1000">
-              </a>
-              <span class="product-discount-label">{{ product.promotion }}%</span>
-            </div>
-            <div class="product-content">
-              <h3 class="title"><a href="#">{{ product.name }}</a></h3>
-              <div class="price">{{ product.price }}</div>
-              <a class="add-to-cart" href="your_add_to_cart_url">+ Add to cart</a>
-            </div>
+    <div class="d-flex align-content-around flex-wrap row row-cols-4 mx-auto gap-4 justify-content-center ">
+      <div *ngFor="let product of products" class="product-card-container row m-0 col ">
+
+        <div class="product-grid">
+          <div class="product-image p-2 rounded-2">
+            <a href="your_product_url" class="image">
+              <img class="pic-1 rounded-5"
+                src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=1000">
+            </a>
+            <span class="product-discount-label">{{ product.promotion }}%</span>
+          </div>
+          <div class="product-content">
+            <h3 class="title"><a href="#">{{ product.name }}</a></h3>
+            <div class="price">{{ product.price }}</div>
+            <a class="add-to-cart" href="/add-item">+ Add to cart</a>
           </div>
         </div>
         <!-- End product loop -->

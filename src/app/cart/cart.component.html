@@ -1,0 +1,72 @@
+<h2 class="text-center fw-bold">CART</h2>
+<hr>
+
+<!-- Check for success message -->
+<!-- <div class="d-flex justify-content-center">
+    <div id="success-message" class="alert alert-success alert-dismissible fade show w-50 " role="alert">
+        <strong>Success message goes here</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div> -->
+
+<div class="d-flex justify-content-center flex-wrap shopping-cart">
+
+  <div class="cart-body col-lg-8 col-md-11 col-sm-11" style="overflow-x:auto;">
+    <div class="column-labels">
+      <label class="product-line-price">Image</label>
+      <label class="product-line-price">Product</label>
+      <label class="product-line-price">Price</label>
+      <label class="product-line-price">Quantity</label>
+      <label class="product-line-price">Total</label>
+      <label class="product-line-price">Remove</label>
+    </div>
+
+    <!-- Replace dynamic content with static content for the product loop -->
+    <div class="product border-bottom pb-4 d-flex card-body bg-transparent ">
+      <div class="product-line-price product-image rounded-2">
+        <img src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=1000">
+      </div>
+      <div class="product-line-price">
+        <div class="product-price">Product Name</div>
+      </div>
+      <div class="product-line-price">100 MAD</div>
+      <div class="product-quantity">
+        <input id="quantity" onchange="changeQuantity(event, 1)" type="number" name="quantity" value="1"
+          class="w-6 text-center border product-line-price" style="--bs-border-opacity: .5;" min="1" />
+      </div>
+      <div class="product-line-price">Total MAD</div>
+      <div class="product-removal product-line-price">
+        <form action="remove_product_url" method="POST">
+          <!-- Include static content for remove button -->
+          <button type="submit" class="btn fs-4 text-danger ms-4 ">
+            <i class='bx bxs-tag-x '></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- End product loop -->
+
+  </div>
+
+  <div class="totals card card-body rounded-1 bg-transparent shadow-sm">
+    <h5 class="border-bottom pb-3">Summary</h5>
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal">Subtotal MAD</div>
+    </div>
+    <div class="totals-item">
+      <label>Tax (5%)</label>
+      <div class="totals-value" id="cart-tax">Tax MAD</div>
+    </div>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping">50 MAD</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total">Total MAD</div>
+    </div>
+    <a href="your_checkout_url" class="checkout">CHECKOUT (Total MAD)</a>
+  </div>
+
+</div>

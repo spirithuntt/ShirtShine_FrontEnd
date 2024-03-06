@@ -16,6 +16,7 @@ import { httpInterceptorProviders } from './helpers/http.interceptor';
 import { AuthService } from './services/auth.service';
 import { RoleComponent } from './role/role.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     BoardSuperAdminComponent,
     RoleComponent,
     ProductListComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

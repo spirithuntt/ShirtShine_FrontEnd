@@ -10,7 +10,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardSuperAdminComponent } from './board-super-admin/board-super-admin.component';
 
 import { httpInterceptorProviders } from './helpers/http.interceptor';
 import { AuthService } from './services/auth.service';
@@ -27,7 +26,6 @@ import { ViewProductComponent } from './view-product/view-product.component';
     HomeComponent,
     ProfileComponent,
     BoardAdminComponent,
-    BoardSuperAdminComponent,
     RoleComponent,
     ProductListComponent,
     CartComponent,

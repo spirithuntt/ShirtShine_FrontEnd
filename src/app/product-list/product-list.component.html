@@ -2,8 +2,6 @@
       <!-- Include static content for the header if any -->
     </header>
 
-
-
     <div class="my-4 py-5 d-flex justify-content-center">
       <h1 class="fs-1">Our <span> Products</span></h1>
     </div>
@@ -21,12 +19,12 @@
           <div class="product-content">
             <h3 class="title"><a href="#">{{ product.name }}</a></h3>
             <div class="price">{{ product.price }}</div>
-            <a class="add-to-cart" href="/add-item">+ Add to cart</a>
+            <a class="add-to-cart" (click)="AddProductToCart(product.id)">+ Add to cart</a>
           </div>
         </div>
         <!-- End product loop -->
 
-      </div>*
+      </div>
     </div>
 
 

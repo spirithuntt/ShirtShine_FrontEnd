@@ -9,22 +9,18 @@ import { CartService } from '../services/cart/cart.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-products: ProductResponseDTO[] = [];
+products?: ProductResponseDTO[] = [];
 
   constructor(private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit() {
-
     this.productService.getAllProducts().subscribe(data => {
-      console.log(data)
-
        this.products = data;
     });
   }
 
-  AddProductToCart(id: number) {
-    this.cartService.addProductToCart(id).subscribe((data: any) => {
-      console.log(data);
+  AddProductToCart(id: number, quantity: number) {
+    this.cartService.addProductToCart(id, quantity).subscribe((data: any) => {
     }
     );
   }

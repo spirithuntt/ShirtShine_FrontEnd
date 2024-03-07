@@ -11,6 +11,7 @@ import { adminGuard } from './guard/admin/admin.guard';
 import { authGuard } from './guard/auth/auth.guard';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , adminGuard],},
   {path: 'products', component: ProductListComponent},
-  { path: 'cart', component: CartComponent, canActivate: [authGuard] },
+  {path: 'cart', component: CartComponent, canActivate: [authGuard] },
+  {path: 'view-product/:id', component: ViewProductComponent},
 ];
 
 @NgModule({

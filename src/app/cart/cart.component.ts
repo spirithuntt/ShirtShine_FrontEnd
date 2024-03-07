@@ -8,7 +8,7 @@ import { CartResponseDTO } from 'src/app/models/cart/cart-response-dto';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  cartItems: CartResponseDTO[] = [];
+  cartItems?: CartResponseDTO[] = [];
 
   constructor(
     private cartService: CartService

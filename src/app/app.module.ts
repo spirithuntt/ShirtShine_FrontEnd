@@ -17,6 +17,7 @@ import { AuthService } from './services/auth.service';
 import { RoleComponent } from './role/role.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CartComponent } from './cart/cart.component';
     RoleComponent,
     ProductListComponent,
     CartComponent,
+    ViewProductComponent,
   ],
   imports: [
     BrowserModule,

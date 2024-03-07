@@ -14,4 +14,9 @@ export class ProductService {
     return this.http.get<ProductResponseDTO[]>(`${this.apiUrl}`);
   }
 
+  getProductById(id: number) {
+    return this.http.get<ProductResponseDTO>(`${this.apiUrl}/${id}`);
+  }
+
+
 }

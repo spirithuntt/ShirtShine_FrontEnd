@@ -10,7 +10,7 @@
 
         <div class="product-grid">
           <div class="product-image p-2 rounded-2">
-            <a href="your_product_url" class="image">
+            <a routerLink="/view-product/{{ product.id }}" class="image">
               <img class="pic-1 rounded-5"
                 src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=1000">
             </a>
@@ -19,7 +19,7 @@
           <div class="product-content">
             <h3 class="title"><a href="#">{{ product.name }}</a></h3>
             <div class="price">{{ product.price }}</div>
-            <a class="add-to-cart" (click)="AddProductToCart(product.id)">+ Add to cart</a>
+            <a class="add-to-cart" (click)="AddProductToCart(product.id, 1)">+ Add to cart</a>
           </div>
         </div>
         <!-- End product loop -->

@@ -23,9 +23,9 @@ export class CartService {
     return this.http.post(`${this.apiUrl}/remove/${id}`, null);
   }
 
-  addProductToCart(id: number) {
-    console.log(`${this.apiUrl}/add/${id}/1`);
-    return this.http.post(`${this.apiUrl}/add/${id}/1`, null);
+  addProductToCart(id: number, quantity: number): any {
+    console.log(`${this.apiUrl}/add/${id}/${quantity}`);
+    return this.http.post(`${this.apiUrl}/add/${id}/${quantity}`, null);
   }
 
 }

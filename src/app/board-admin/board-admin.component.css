@@ -1,0 +1,14 @@
+.nav-itemm {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.update-button {
+  margin-right: 0.5rem;
+}
+/* hover white for create button */
+.create-btn:hover {
+  background-color: white!important;
+  color: black;
+}

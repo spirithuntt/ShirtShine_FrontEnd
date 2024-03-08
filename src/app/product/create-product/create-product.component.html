@@ -1,0 +1,54 @@
+<!-- create-product.component.html -->
+<body>
+  <div class="form-container">
+    <h2 class="form-title">Create Product</h2>
+
+    <!-- Create Product Form -->
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="productName" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="productName" placeholder="Enter product name"
+               [(ngModel)]="product.name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productDescription" class="form-label">Product Description</label>
+        <input type="text" class="form-control" id="productDescription" placeholder="Enter product description"
+               [(ngModel)]="product.description" name="description" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productCategory" class="form-label">Product Category</label>
+        <select [(ngModel)]="product.category_id" name="category_id">
+          <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="productPrice" class="form-label">Product Price</label>
+        <input type="number" class="form-control" id="productPrice" placeholder="Enter product price"
+               [(ngModel)]="product.price" name="price" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productImage" class="form-label">Product Image</label>
+        <input type="text" class="form-control" id="productImage" placeholder="Enter product image URL"
+               [(ngModel)]="product.image" name="image" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productStock" class="form-label">Product Stock</label>
+        <input type="number" class="form-control" id="productStock" placeholder="Enter product stock"
+               [(ngModel)]="product.stock" name="stock" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productPromotion" class="form-label">Product Promotion</label>
+        <input type="number" class="form-control" id="productPromotion" placeholder="Enter product promotion"
+               [(ngModel)]="product.promotion" name="promotion" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Create</button>
+    </form>
+  </div>
+</body>

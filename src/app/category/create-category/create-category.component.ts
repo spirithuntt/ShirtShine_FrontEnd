@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoryService } from '../../services/category/category.service';
 import { CategoryResponseDto } from 'src/app/models/category/category-response-dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-category',
@@ -10,7 +11,7 @@ import { CategoryResponseDto } from 'src/app/models/category/category-response-d
 export class CreateCategoryComponent {
   categoryName: CategoryResponseDto["name"]=''
 
-constructor(private categoryService: CategoryService) { }
+constructor(private categoryService: CategoryService, private router: Router) { }
 onSubmit() {
   if (this.categoryName.trim() === '') {
     alert('Please enter a category name');
@@ -19,6 +20,7 @@ onSubmit() {
   //create category from service
   this.categoryService.createCategory({name: this.categoryName} as CategoryResponseDto).subscribe({
     next: data => {
+      this.router.navigate(['/category']);
       console.log(data);
     },
     error: err => {

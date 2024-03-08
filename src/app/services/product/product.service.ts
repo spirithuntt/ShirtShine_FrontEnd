@@ -18,5 +18,17 @@ export class ProductService {
     return this.http.get<ProductResponseDTO>(`${this.apiUrl}/${id}`);
   }
 
+  createProduct(product: ProductResponseDTO) {
+    return this.http.post<ProductResponseDTO>(`${this.apiUrl}`, product);
+  }
+
+  updateProduct(product: ProductResponseDTO) {
+    return this.http.put<ProductResponseDTO>(`${this.apiUrl}/${product.id}`, product);
+  }
+
+  deleteProduct(id: number) {
+    return this.http.delete<ProductResponseDTO>(`${this.apiUrl}/${id}`);
+  }
+
 
 }

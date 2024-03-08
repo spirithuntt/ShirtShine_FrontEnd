@@ -2,7 +2,7 @@ export interface ProductResponseDTO{
   id : number;
   name : string;
   description : string;
-  category : string;
+  category_id: number;
   price : number;
   image : string;
   stock : number;

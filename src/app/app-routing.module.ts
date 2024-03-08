@@ -15,6 +15,9 @@ import { ViewProductComponent } from './view-product/view-product.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
+import { CreateProductComponent } from './product/create-product/create-product.component';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
+import { ProductDashboardComponent } from './product/product-dashboard/product-dashboard.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,6 +34,9 @@ const routes: Routes = [
   { path: 'category', component: CategoryListComponent, canActivate: [authGuard , adminGuard],},
   { path: 'create-category', component: CreateCategoryComponent, canActivate: [authGuard , adminGuard],},
   { path: 'update-category/:id', component: UpdateCategoryComponent, canActivate: [authGuard , adminGuard],},
+  {path: 'create-product', component: CreateProductComponent, canActivate: [authGuard , adminGuard],},
+  {path: 'update-product/:id', component: UpdateProductComponent, canActivate: [authGuard , adminGuard],},
+  {path: 'product-dashboard', component: ProductDashboardComponent, canActivate: [authGuard , adminGuard],},
 ];
 
 @NgModule({

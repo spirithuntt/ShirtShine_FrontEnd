@@ -21,6 +21,9 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
+import { CreateProductComponent } from './product/create-product/create-product.component';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
+import { ProductDashboardComponent } from './product/product-dashboard/product-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { UpdateCategoryComponent } from './category/update-category/update-categ
     CreateCategoryComponent,
     CategoryListComponent,
     UpdateCategoryComponent,
+    CreateProductComponent,
+    UpdateProductComponent,
+    ProductDashboardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category/category.service';
 import { CategoryResponseDto } from 'src/app/models/category/category-response-dto';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-category',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateCategoryComponent implements OnInit {
   category: CategoryResponseDto = {id: 0, name: ''};
 
-  constructor(private categoryService: CategoryService, private route: ActivatedRoute) { }
+  constructor(private categoryService: CategoryService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +25,7 @@ export class UpdateCategoryComponent implements OnInit {
     this.category.id = this.route.snapshot.params['id'];
     this.categoryService.updateCategory(this.category).subscribe(
       response => {
+        this.router.navigate(['/category']);
         console.log(response);
       },
       error => {

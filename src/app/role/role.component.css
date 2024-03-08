@@ -1,0 +1,110 @@
+.nav-itemm {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.update-button {
+  margin-right: 0.5rem;
+}
+/* hover white for create button */
+.create-btn:hover {
+  background-color: white!important;
+  color: black;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  margin-top: 20px;
+}
+
+.secondary-color {
+  color: #ffc60a;
+}
+
+.category-card,
+.product-card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #ffc60a;
+  color: #fff;
+}
+
+.card-body {
+  background-color: #fff;
+}
+
+.btn-secondary {
+  background-color: #ffc60a;
+  color: #fff;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.container-dashboard {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #343a40; /* Dark text color */
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.section-content {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.table th,
+.table td {
+  border: none;
+}
+
+.table th {
+  background-color: #ffc60a; /* Secondary color */
+  color: #343a40;
+}
+
+.table td {
+  background-color: #fff;
+  color: #343a40;
+}

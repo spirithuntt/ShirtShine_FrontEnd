@@ -1,69 +1,92 @@
-<div class="container mx-auto mt-12 p-8 bg-gray-800 text-gray-300 shadow-md rounded-md" style="max-width: 800px;">
 
-  <h2 class="text-2xl font-semibold mb-4">Admin Dashboard</h2>
 
-  <!-- Get Roles Section -->
-  <div class="mb-8">
-      <div class="bg-gray-700 p-4 rounded-md">
-          <h3 class="text-lg font-semibold mb-2">Get Roles</h3>
-          <div class="overflow-x-auto">
-              <table class="min-w-full bg-white border border-gray-300 text-blue-800">
-                  <!-- Table header -->
-                  <thead>
-                      <tr>
-                          <th class="py-2 px-4 border-b text-blue-800 ">Role Name</th>
-                          <!-- Add more columns as needed -->
-                      </tr>
-                  </thead>
-                  <!-- Table body -->
-                  <tbody>
-                    <tr *ngFor="let role of roles" class="text-blue-800">
-                      <td>{{ role.name }}</td>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link activ font-weight-bold text-secondary nav-itemm" href="/roles">
+              <i class="fas fa-chart-bar mr-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-secondary nav-itemm" href="/category">
+              <i class="fas fa-th-list mr-2"></i> Categories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-secondary nav-itemm" href="/product-dashboard">
+              <i class="fas fa-box mr-2"></i> Products
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<div class="container container-dashboard">
+    <h2 class="dashboard-heading">Admin Dashboard</h2>
+
+    <!-- Get Roles Section -->
+    <div class="section">
+        <div class="section-header">Get Roles</div>
+        <div class="section-content">
+            <table class="table table-bordered table-striped">
+                <!-- Table header -->
+                <thead>
+                    <tr>
+                        <th>Role Name</th>
+                        <!-- Add more columns as needed -->
                     </tr>
-                  </tbody>
-              </table>
-          </div>
-      </div>
-  </div>
+                </thead>
+                <!-- Table body -->
+                <tbody>
+                    <tr *ngFor="let role of roles">
+                        <td>{{ role.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-  <!-- Assign Roles Section -->
-  <div class="mb-8">
-      <div class="bg-gray-700 p-4 rounded-md">
-          <h3 class="text-lg font-semibold mb-2">Assign Roles</h3>
-          <!-- Your content for assigning roles goes here -->
-      </div>
-  </div>
+    <!-- Assign Roles Section -->
+    <div class="section">
+        <div class="section-header">Assign Roles</div>
+        <div class="section-content">
+            <!-- Your content for assigning roles goes here -->
+        </div>
+    </div>
 
-  <!-- Delete Role Section -->
-  <div class="mb-8">
-      <div class="bg-gray-700 p-4 rounded-md">
-          <h3 class="text-lg font-semibold mb-2">Delete Role</h3>
-          <!-- Your content for deleting roles goes here -->
-      </div>
-  </div>
+    <!-- Delete Role Section -->
+    <div class="section">
+        <div class="section-header">Delete Role</div>
+        <div class="section-content">
+            <!-- Your content for deleting roles goes here -->
+        </div>
+    </div>
 
-  <!-- Grant Authorities Section -->
-  <div class="mb-8">
-      <div class="bg-gray-700 p-4 rounded-md">
-          <h3 class="text-lg font-semibold mb-2">Grant Authorities</h3>
-          <!-- Your content for granting authorities goes here -->
-      </div>
-  </div>
+    <!-- Grant Authorities Section -->
+    <div class="section">
+        <div class="section-header">Grant Authorities</div>
+        <div class="section-content">
+            <!-- Your content for granting authorities goes here -->
+        </div>
+    </div>
 
-  <!-- Revoke Authorities Section -->
-  <div class="mb-8">
-      <div class="bg-gray-700 p-4 rounded-md">
-          <h3 class="text-lg font-semibold mb-2">Revoke Authorities</h3>
-          <!-- Your content for revoking authorities goes here -->
-      </div>
-  </div>
+    <!-- Revoke Authorities Section -->
+    <div class="section">
+        <div class="section-header">Revoke Authorities</div>
+        <div class="section-content">
+            <!-- Your content for revoking authorities goes here -->
+        </div>
+    </div>
 
-  <!-- Assign Role to User Section -->
-  <div>
-      <div class="bg-gray-700 p-4 rounded-md">
-          <h3 class="text-lg font-semibold mb-2">Assign Role to User</h3>
-          <!-- Your content for assigning roles to users goes here -->
-      </div>
-  </div>
-
+    <!-- Assign Role to User Section -->
+    <div class="section">
+        <div class="section-header">Assign Role to User</div>
+        <div class="section-content">
+            <!-- Your content for assigning roles to users goes here -->
+        </div>
+    </div>
 </div>
+  </div>

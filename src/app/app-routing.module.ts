@@ -12,6 +12,9 @@ import { authGuard } from './guard/auth/auth.guard';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { ViewProductComponent } from './view-product/view-product.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import { CreateCategoryComponent } from './category/create-category/create-category.component';
+import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,6 +28,9 @@ const routes: Routes = [
   {path: 'products', component: ProductListComponent},
   {path: 'cart', component: CartComponent, canActivate: [authGuard] },
   {path: 'view-product/:id', component: ViewProductComponent},
+  { path: 'category', component: CategoryListComponent, canActivate: [authGuard , adminGuard],},
+  { path: 'create-category', component: CreateCategoryComponent, canActivate: [authGuard , adminGuard],},
+  { path: 'update-category/:id', component: UpdateCategoryComponent, canActivate: [authGuard , adminGuard],},
 ];
 
 @NgModule({

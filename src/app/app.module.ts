@@ -17,6 +17,10 @@ import { RoleComponent } from './role/role.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { ViewProductComponent } from './view-product/view-product.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import { CreateCategoryComponent } from './category/create-category/create-category.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +34,15 @@ import { ViewProductComponent } from './view-product/view-product.component';
     ProductListComponent,
     CartComponent,
     ViewProductComponent,
+    CreateCategoryComponent,
+    CategoryListComponent,
+    UpdateCategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [httpInterceptorProviders, AuthService],

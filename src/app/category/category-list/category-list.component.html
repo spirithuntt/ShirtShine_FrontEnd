@@ -1,0 +1,108 @@
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-2 d-none d-md-block sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link activ font-weight-bold text-secondary nav-itemm" href="#">
+                <i class="fas fa-chart-bar mr-2"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold text-secondary nav-itemm" href="#">
+                <i class="fas fa-th-list mr-2"></i> Categories
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold text-secondary nav-itemm" href="#">
+                <i class="fas fa-box mr-2"></i> Products
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+      <!-- Main content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h2 class="h2 secondary-color">Admin Dashboard</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-10">
+            <div class="card category-card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  Categories
+                  <a type="button" class="btn btn-secondary bg-black  col-2 create-btn rounded"
+                    href="create-category">
+                    Create Category
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+
+                <!-- Table to display categories (example) -->
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Loop through categories and display each row (example) -->
+                    <tr *ngFor="let category of categories">
+                      <td>{{ category.name }}</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+
+                      <td class="text-right">
+                        <a type="button" class="btn btn-outline-warning btn-md update-button" routerLink="/update-category/{{ category.id }}">
+                          Update
+                        </a>
+                        <a type="button" class="btn btn-outline-danger btn-md delete-button" (click)="deleteCategory(category.id)">
+                          Delete
+                        </a>
+                      </td>
+                    </tr>
+                    <!-- More rows here... -->
+                  </tbody>
+                </table>
+
+                <!-- Create Category Modal -->
+                <div class="modal fade" id="createCategoryModal" tabindex="-1" role="dialog"
+                  aria-labelledby="createCategoryModalLabel" aria-hidden="true">
+                  <!-- Similar structure as create modal, adjust as needed -->
+                </div>
+
+                <!-- Update Category Modal -->
+                <div class="modal fade" id="updateCategoryModal" tabindex="-1" role="dialog"
+                  aria-labelledby="updateCategoryModalLabel" aria-hidden="true">
+                  <!-- Similar structure as create modal, adjust as needed -->
+                </div>
+
+                <!-- Delete Category Modal -->
+                <div class="modal fade" id="deleteCategoryModal" tabindex="-1" role="dialog"
+                  aria-labelledby="deleteCategoryModalLabel" aria-hidden="true">
+                  <!-- Similar structure as create modal, adjust as needed -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>

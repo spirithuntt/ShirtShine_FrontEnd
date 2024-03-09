@@ -30,5 +30,9 @@ export class ProductService {
     return this.http.delete<ProductResponseDTO>(`${this.apiUrl}/${id}`);
   }
 
+  searchProduct(query: string) {
+    return this.http.get<ProductResponseDTO[]>(`${this.apiUrl}/search?query=${query}`);
+  }
+
 
 }

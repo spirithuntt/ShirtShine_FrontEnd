@@ -97,4 +97,38 @@ a{
   color: #212529
 }
 
+body {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.search-bar-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  display: flex;
+  border: 2px solid #ced4da;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10%;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #ffc60a;
+  color: #343a40;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
 

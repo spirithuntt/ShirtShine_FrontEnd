@@ -10,6 +10,7 @@ import { CartService } from '../services/cart/cart.service';
 })
 export class ProductListComponent {
 products?: ProductResponseDTO[] = [];
+searchQuery!: string;
 
   constructor(private productService: ProductService, private cartService: CartService) { }
 
@@ -17,6 +18,7 @@ products?: ProductResponseDTO[] = [];
     this.productService.getAllProducts().subscribe(data => {
        this.products = data;
     });
+
   }
 
   AddProductToCart(id: number, quantity: number) {
@@ -24,4 +26,16 @@ products?: ProductResponseDTO[] = [];
     }
     );
   }
+
+  searchProduct() {
+    this.productService.searchProduct(this.searchQuery).subscribe(
+      data => {
+        this.products = data;
+        console.log(data);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+}
 }

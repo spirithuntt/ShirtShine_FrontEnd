@@ -14,6 +14,20 @@ export class UpdateCategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+
+    const categoryId = this.route.snapshot.params['id'];
+    this.getCategory(categoryId);
+  }
+
+  getCategory(id: number): void {
+    this.categoryService.getCategoryById(id).subscribe(
+      data => {
+        this.category = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   onSubmit(): void {

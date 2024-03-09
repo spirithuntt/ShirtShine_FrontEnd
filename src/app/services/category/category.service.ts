@@ -28,4 +28,8 @@ export class CategoryService {
     console.log(id);
     return this.http.delete<CategoryResponseDto>(`${this.apiUrl}/${id}`);
   }
+
+  getCategoryById(id:Number){
+    return this.http.get<CategoryResponseDto>(`${this.apiUrl}/${id}`);
+  }
 }

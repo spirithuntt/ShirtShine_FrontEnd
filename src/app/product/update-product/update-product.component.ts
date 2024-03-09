@@ -31,6 +31,20 @@ export class UpdateProductComponent implements OnInit {
     this.categoryService.getAllCategories().subscribe(categories => {
       this.categories = categories;
     });
+
+    const productId = this.route.snapshot.params['id'];
+    this.getProduct(productId);
+  }
+
+  getProduct(id: number): void {
+    this.productService.getProductById(id).subscribe(
+      data => {
+        this.product = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   onSubmit(): void {

@@ -14,11 +14,6 @@
 
     <div class="text-center">
         <form>
-            <div class="col-2">
-                <input type="number" value="1" min="1"
-                    class="w-50 product-quantity m-3 bg-light border-warning border-1 mb-4 ms-3 p-1 rounded"
-                    style="--bs-border-opacity: .5;" name="quantity" id="quantity">
-            </div>
             <button type="submit" (click)="AddProductToCart(product?.id!, 1)"
                 class="btn btn-warning rounded col-11 py-3">
                 ADD TO CART

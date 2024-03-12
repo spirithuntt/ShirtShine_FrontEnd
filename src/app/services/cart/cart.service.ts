@@ -28,4 +28,8 @@ export class CartService {
     return this.http.post(`${this.apiUrl}/add/${id}/${quantity}`, null);
   }
 
+  updateProductQuantity(id: number, quantity: number): any {
+    return this.http.post(`${this.apiUrl}/update/${id}/${quantity}`, null);
+  }
+
 }

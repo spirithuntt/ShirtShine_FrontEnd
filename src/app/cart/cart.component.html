@@ -17,32 +17,36 @@
       <label class="product-line-price">Product</label>
       <label class="product-line-price">Price</label>
       <label class="product-line-price">Quantity</label>
+      <label class="product-line-price">Promotion</label>
       <label class="product-line-price">Total</label>
       <label class="product-line-price">Remove</label>
     </div>
 
-    <!-- Replace dynamic content with static content for the product loop -->
-    <div *ngFor="let cartItem of cartItems; trackBy: trackByFn"  class="product border-bottom pb-4 d-flex card-body bg-transparent ">
+    <div *ngFor="let cartItem of cartItems?.cartItems; trackBy: trackByFn"
+      class="product border-bottom pb-4 d-flex card-body bg-transparent ">
       <div class="product-line-price product-image rounded-2">
-        <img src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=1000">
+        <img [src]="cartItem.image" alt="product image" class="img-fluid rounded-2"
+          style="width: 100px; height: 100px; object-fit: cover; object-position: center; border-radius: 50%; border: 1px solid #f0f0f0; box-shadow: 0 0 10px 0 #f0f0f0; transition: all 0.3s ease-in-out; cursor: pointer; transition: all 0.3s ease-in-out; cursor: pointer;">
       </div>
       <div class="product-line-price">
-        <div class="product-price">{{ cartItem.name }}</div>
+        <div class="product-price">{{ cartItem.productName }}</div>
       </div>
       <div class="product-line-price">{{ cartItem.price }} MAD</div>
-      <div class="product-quantity">
-        <input id="quantity" onchange="changeQuantity(event, 1)" type="number" name="quantity" value="1"
-          class="w-6 text-center border product-line-price" style="--bs-border-opacity: .5;" min="1" />
+      <div class="product-quantity product-line-price product-image rounded-2">
+        <input type="number" [(ngModel)]="cartItem.quantity" min="1"
+          class="w-50 product-quantity m-3 bg-light border-warning border-1 mb-4 ms-3 p-1 rounded"
+          style="--bs-border-opacity: .5;" name="quantity" id="quantity"
+          (ngModelChange)="updateQuantityInCart(cartItem.productId, cartItem.quantity)">
       </div>
-      <div class="product-line-price"></div>
+      <div class="product-line-price">{{ cartItem.promotion }} %</div>
+      <div class="product-line-price">{{ cartItem.productTotalPrice }}</div>
       <div class="product-removal product-line-price">
-          <!-- Include static content for remove button -->
-          <button (click)="removeProductFromCart(cartItem.id)" class="btn fs-4 text-danger ms-4">
-            <i class='bx bxs-tag-x '></i>
-          </button>
+        <button (click)="removeProductFromCart(cartItem.productId)" class="btn fs-4 text-danger ms-4">
+          <i class='bx bxs-tag-x '></i>
+        </button>
       </div>
+
     </div>
-    <!-- End product loop -->
 
   </div>
 
@@ -50,19 +54,19 @@
     <h5 class="border-bottom pb-3">Summary</h5>
     <div class="totals-item">
       <label>Subtotal</label>
-      <div class="totals-value" id="cart-subtotal">Subtotal MAD</div>
+      <div class="totals-value" id="cart-subtotal">{{ cartItems?.totalPrice }}</div>
     </div>
     <div class="totals-item">
-      <label>Tax (5%)</label>
-      <div class="totals-value" id="cart-tax">Tax MAD</div>
+      <label>Promotion</label>
+      <div class="totals-value" id="cart-tax">{{ totalPromotion }} %</div>
     </div>
     <div class="totals-item">
       <label>Shipping</label>
-      <div class="totals-value" id="cart-shipping">50 MAD</div>
+      <div class="totals-value" id="cart-shipping">Free</div>
     </div>
     <div class="totals-item totals-item-total">
       <label>Grand Total</label>
-      <div class="totals-value" id="cart-total">Total MAD</div>
+      <div class="totals-value" id="cart-total">{{ cartItems?.totalPriceWithPromotion }}</div>
     </div>
     <a href="your_checkout_url" class="checkout">CHECKOUT (Total MAD)</a>
   </div>

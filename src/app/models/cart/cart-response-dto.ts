@@ -1,7 +1,6 @@
+import { CartItemResponseDTO } from './cart-item-response-dto';
 export interface CartResponseDTO {
-id: any;
-price: any;
-name: any;
-  products: string[];
-  quantity: number;
+  totalPrice: number;
+  totalPriceWithPromotion: number;
+  cartItems: CartItemResponseDTO[];
 }

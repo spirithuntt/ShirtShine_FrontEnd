@@ -12,7 +12,7 @@ import { CartService } from '../services/cart/cart.service';
 export class ViewProductComponent implements OnInit{
   product?: ProductResponseDTO;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute, private CartService: CartService) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: CartService) { }
 
   ngOnInit() {
     const productId = this.route.snapshot.paramMap.get('id');
@@ -24,7 +24,7 @@ export class ViewProductComponent implements OnInit{
   }
 
   AddProductToCart(id: number, quantity: number) {
-    this.CartService.addProductToCart(id, quantity).subscribe((data: any) => {
+    this.cartService.addProductToCart(id, quantity).subscribe((data: any) => {
     }
     );
   }

@@ -16,6 +16,7 @@ export class AppComponent {
   showAdminBoard = false;
   showSuperAdminBoard = false;
   name?: string;
+  ShowUserData = false;
 
   constructor(private storageService: StorageService, private authService: AuthService, private router: Router) { }
 
@@ -31,6 +32,9 @@ export class AppComponent {
       }
       if (this.role === 'SUPER_ADMIN') {
         this.showSuperAdminBoard = true;
+      }
+      if (this.role === 'USER') {
+        this.ShowUserData = true;
       }
     }
   }

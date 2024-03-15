@@ -28,53 +28,50 @@
       </div>
     </nav>
 
+
+
     <!-- Main content -->
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h2 class="h2 secondary-color">Admin Dashboard</h2>
       </div>
       <div class="row">
         <div class="col-md-10">
-          <div class="card product-card">
+          <div class="card category-card">
             <div class="card-header">
               <div class="d-flex justify-content-between align-items-center">
-                Products
-                <a type="button" class="btn btn-secondary bg-black  col-2 create-btn rounded" href="create-product">
-                  Create Product
-                </a>
+                Orders
               </div>
             </div>
             <div class="card-body">
 
-              <!-- Table to display products (example) -->
+              <!-- Table to display categories (example) -->
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Full Name</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Zip Code</th>
                     <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>Actions</th>
+
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- Loop through products and display each row (example) -->
-                  <tr *ngFor="let product of products">
-                    <td>{{ product.name }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
+                  <!-- Loop through categories and display each row (example) -->
+                  <tr *ngFor="let order of orders">
+                    <td>{{ order.address }}</td>
+                    <td>{{ order.email }}</td>
+                    <td>{{ order.fullName }}</td>
+                    <td>{{ order.phone }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.zipCode }}</td>
                     <td class="text-right">
-                      <a type="button" class="btn btn-outline-warning btn-md update-button" routerLink="/update-product/{{ product.id }}">
-                        Update
-                      </a>
-                      <a type="button" class="btn btn-outline-danger btn-md delete-button" (click)="deleteProduct(product.id)">
-                        Delete
+                      <a type="button" class="btn btn-outline-warning btn-md update-button" routerLink="">
+                        Update Order Status
                       </a>
                     </td>
                   </tr>
@@ -82,21 +79,21 @@
                 </tbody>
               </table>
 
-              <!-- Create Product Modal -->
-              <div class="modal fade" id="createProductModal" tabindex="-1" role="dialog"
-                aria-labelledby="createProductModalLabel" aria-hidden="true">
+              <!-- Create Category Modal -->
+              <div class="modal fade" id="createCategoryModal" tabindex="-1" role="dialog"
+                aria-labelledby="createCategoryModalLabel" aria-hidden="true">
                 <!-- Similar structure as create modal, adjust as needed -->
               </div>
 
-              <!-- Update Product Modal -->
-              <div class="modal fade" id="updateProductModal" tabindex="-1" role="dialog"
-                aria-labelledby="updateProductModalLabel" aria-hidden="true">
+              <!-- Update Category Modal -->
+              <div class="modal fade" id="updateCategoryModal" tabindex="-1" role="dialog"
+                aria-labelledby="updateCategoryModalLabel" aria-hidden="true">
                 <!-- Similar structure as create modal, adjust as needed -->
               </div>
 
-              <!-- Delete Product Modal -->
-              <div class="modal fade" id="deleteProductModal" tabindex="-1" role="dialog"
-                aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+              <!-- Delete Category Modal -->
+              <div class="modal fade" id="deleteCategoryModal" tabindex="-1" role="dialog"
+                aria-labelledby="deleteCategoryModalLabel" aria-hidden="true">
                 <!-- Similar structure as create modal, adjust as needed -->
               </div>
 

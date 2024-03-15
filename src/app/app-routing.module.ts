@@ -18,6 +18,9 @@ import { UpdateCategoryComponent } from './category/update-category/update-categ
 import { CreateProductComponent } from './product/create-product/create-product.component';
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { ProductDashboardComponent } from './product/product-dashboard/product-dashboard.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -37,6 +40,9 @@ const routes: Routes = [
   {path: 'create-product', component: CreateProductComponent, canActivate: [authGuard , adminGuard],},
   {path: 'update-product/:id', component: UpdateProductComponent, canActivate: [authGuard , adminGuard],},
   {path: 'product-dashboard', component: ProductDashboardComponent, canActivate: [authGuard , adminGuard],},
+  {path: 'checkout', component: CheckoutComponent, canActivate: [authGuard] },
+  {path: 'my-orders', component: MyOrdersComponent, canActivate: [authGuard] },
+  {path: 'orders', component: OrdersComponent, canActivate: [authGuard , adminGuard],},
 ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+<body>
+
+<div class="form-container">
+<h2 class="form-title">Checkout Form</h2>
+<div *ngIf="checkoutForm.submitted && checkoutForm.valid" class="alert alert-success">
+  Your order has been placed successfully go to orders page to see your order.
+</div>
+<div *ngIf="checkoutForm.submitted && checkoutForm.invalid" class="alert alert-danger">
+  Please fill out all the fields.
+</div>
+<!-- Checkout Form -->
+<form #checkoutForm="ngForm" (ngSubmit)="onCheckout()">
+  <div class="form-group">
+      <label for="fullName" class="form-label">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" [(ngModel)]="orderRequestDTO.fullName"
+             class="form-control" required>
+  </div>
+  <div class="form-group">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="orderRequestDTO.email" class="form-control"
+             required>
+  </div>
+  <div class="form-group">
+      <label for="phone" class="form-label">Phone:</label>
+      <input type="tel" id="phone" name="phone" [(ngModel)]="orderRequestDTO.phone" class="form-control"
+             required>
+  </div>
+  <div class="form-group">
+      <label for="zipCode" class="form-label">Zip Code:</label>
+      <input type="number" id="zipCode" name="zipCode" [(ngModel)]="orderRequestDTO.zipCode"
+             class="form-control" required>
+  </div>
+  <div class="form-group">
+      <label for="address" class="form-label">Address:</label>
+      <input type="text" id="address" name="address" [(ngModel)]="orderRequestDTO.address" class="form-control"
+             required>
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg">Complete Checkout</button>
+</form>
+</div>

@@ -18,7 +18,7 @@ export class UpdateProductComponent implements OnInit {
     description: '',
     category_id: 0,
     price: 0,
-    image: '',
+    image: null,
     stock: 0,
     promotion: 0
   };
@@ -54,7 +54,10 @@ export class UpdateProductComponent implements OnInit {
     }
 
     this.product.id = this.route.snapshot.params['id'];
-    this.productService.updateProduct(this.product).subscribe(
+
+
+
+    this.productService.updateProduct(this.product, this.product.image).subscribe(
       response => {
         this.router.navigate(['/product-dashboard']);
         console.log(response);
@@ -63,5 +66,11 @@ export class UpdateProductComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.product.image = file;
+    }
   }
 }

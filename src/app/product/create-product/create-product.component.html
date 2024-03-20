@@ -4,7 +4,7 @@
     <h2 class="form-title">Create Product</h2>
 
     <!-- Create Product Form -->
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="createProduct()">
       <div class="form-group">
         <label for="productName" class="form-label">Product Name</label>
         <input type="text" class="form-control" id="productName" placeholder="Enter product name"
@@ -32,8 +32,8 @@
 
       <div class="form-group">
         <label for="productImage" class="form-label">Product Image</label>
-        <input type="text" class="form-control" id="productImage" placeholder="Enter product image URL"
-               [(ngModel)]="product.image" name="image" required>
+        <input type="file" class="form-control" id="productImage" placeholder="Enter product image URL"
+       (change)="onFileChange($event)" name="productImage" required>
       </div>
 
       <div class="form-group">

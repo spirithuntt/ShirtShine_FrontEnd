@@ -4,7 +4,7 @@ export interface ProductResponseDTO{
   description : string;
   category_id: number;
   price : number;
-  image : string;
+  image: File | Blob | null;
   stock : number;
   promotion: number;
 }

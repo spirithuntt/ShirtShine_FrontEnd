@@ -31,9 +31,9 @@
 
       <div class="form-group">
         <label for="productImage" class="form-label">Product Image</label>
-        <input type="text" class="form-control" id="productImage" placeholder="Enter product image URL"
-               [(ngModel)]="product.image" name="productImage" required>
-      </div>
+        <input type="file" class="form-control" id="productImage" placeholder="Enter product image URL"
+        (change)="onFileChange($event)" *ngIf="product.image" [src]="product.image" name="productImage" required>
+    </div>
 
       <div class="form-group">
         <label for="productStock" class="form-label">Product Stock</label>

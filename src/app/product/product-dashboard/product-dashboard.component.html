@@ -50,24 +50,16 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>Actions</th>
+                    <th class="col-md-2">Image</th>
+                    <th class="col-md-2">Name</th>
+                    <th class="col-md-2">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <!-- Loop through products and display each row (example) -->
                   <tr *ngFor="let product of products">
-                    <td>{{ product.name }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><img [src]="product.image" class="card-img-top" class="img-thumbnail w-25" alt="..." style="max-width:20%;"></td>
+                    <td class="col-md-2">{{ product.name }}</td>
 
                     <td class="text-right">
                       <a type="button" class="btn btn-outline-warning btn-md update-button" routerLink="/update-product/{{ product.id }}">

@@ -19,7 +19,7 @@
           <div class="card product-card">
               <div class="product-image">
                   <a routerLink="/view-product/{{ product.id }}" class="image">
-                      <img class="card-img-top" src="https://threadheads.com/cdn/shop/products/astroboy-jerriPXL_1018.jpg?v=1657782791&width=100" alt="{{ product.name }}">
+                      <img [src]="product.image" class="card-img-top" alt="...">
                   </a>
                   <span class="product-discount-label">{{ product.promotion }}%</span>
               </div>

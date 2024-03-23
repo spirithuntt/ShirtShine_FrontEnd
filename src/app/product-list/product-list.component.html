@@ -5,40 +5,41 @@
     <div class="my-4 py-5 d-flex justify-content-center">
       <h1 class="fs-1 titlee">Our <span> Products</span></h1>
     </div>
-<body>
-  <div class="search-bar-container">
-    <div class="search-bar">
-        <input type="text" [(ngModel)]="searchQuery" placeholder="Search products" class="search-input">
-        <button (click)="searchProduct()" class="search-btn">Search</button>
-    </div>
-</div>
 
-<div class="container">
-  <div class="row">
-      <div *ngFor="let product of products" class="col-md-4">
-          <div class="card product-card">
+    <body>
+      <div class="search-bar-container">
+        <div class="search-bar">
+          <input type="text" [(ngModel)]="searchQuery" placeholder="Search products" class="search-input">
+          <button (click)="searchProduct()" class="search-btn">Search</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div *ngFor="let product of products" class="col-md-4">
+            <div class="card product-card">
               <div class="product-image">
-                  <a routerLink="/view-product/{{ product.id }}" class="image">
-                      <img [src]="product.image" class="card-img-top" alt="...">
-                  </a>
-                  <span class="product-discount-label">{{ product.promotion }}%</span>
+                <a routerLink="/view-product/{{ product.id }}" class="image">
+                  <img [src]="product.image" class="card-img-top" alt="...">
+                </a>
+                <span class="product-discount-label">{{ product.promotion }}%</span>
               </div>
 
               <div class="card-body product-content">
-                  <h5 class="card-title title product-name text-secondary"><a href="#">{{ product.name }}</a></h5>
-                  <p class="card-text price">{{ product.price }} DH</p>
-                  <a href="#" class="btn btn-primary add-to-cart" (click)="AddProductToCart(product.id, 1)">
-                      + Add to Cart
-                  </a>
+                <h5 class="card-title title product-name text-secondary"><a href="#">{{ product.name }}</a></h5>
+                <p class="card-text price">{{ product.price }} DH</p>
+                <a href="#" class="btn btn-primary add-to-cart" (click)="AddProductToCart(product.id, 1)">
+                  + Add to Cart
+                </a>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-</div>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+      </script>

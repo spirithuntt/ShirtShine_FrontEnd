@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ProductResponseDTO } from '../../models/product/product-response-dto';
 import { ProductService } from 'src/app/services/product/product.service';
 import { CategoryService } from 'src/app/services/category/category.service';
+import { NotificationService } from '../../services/Notification/notification.service';
+
 
 @Component({
   selector: 'app-create-product',
@@ -21,7 +23,11 @@ export class CreateProductComponent implements OnInit {
     promotion: 0
   };
   categories: any[] = [];
-  constructor(private http: HttpClient, private productService:ProductService, private categoryService:CategoryService) {}
+  constructor(private http: HttpClient,
+     private productService:ProductService,
+     private categoryService:CategoryService,
+      private notificationService: NotificationService
+     ) {}
 
   ngOnInit() {
     // Fetch categories when the component is initialized
@@ -33,7 +39,7 @@ export class CreateProductComponent implements OnInit {
 
   createProduct() {
     this.productService.createProduct(this.product, this.product.image).subscribe((data: any) => {
-      console.log(data);
+      this.notificationService.show(['Product created successfully'], 'success');
     });
   }
 

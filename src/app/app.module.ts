@@ -28,6 +28,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MyOrdersComponent,
     OrdersComponent,
     SidebarComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

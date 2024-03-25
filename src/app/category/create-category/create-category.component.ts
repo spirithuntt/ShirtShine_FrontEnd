@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CategoryService } from '../../services/category/category.service';
 import { CategoryResponseDto } from 'src/app/models/category/category-response-dto';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../services/Notification/notification.service';
+
 
 @Component({
   selector: 'app-create-category',
@@ -11,28 +13,26 @@ import { Router } from '@angular/router';
 export class CreateCategoryComponent {
   categoryName: CategoryResponseDto["name"]=''
 
-constructor(private categoryService: CategoryService, private router: Router) { }
+constructor(private categoryService: CategoryService, private router: Router, private notificationService: NotificationService) { }
 onSubmit() {
-  if (this.categoryName.trim() === '') {
-    alert('Please enter a category name');
-    return;
-  }
-  //create category from service
+  // if (this.categoryName.trim() === '') {
+  //   alert('Please enter a category name');
+  //   return;
+  // }
   this.categoryService.createCategory({name: this.categoryName} as CategoryResponseDto).subscribe({
     next: data => {
       this.router.navigate(['/category']);
-      console.log(data);
+      this.notificationService.show(['Category created successfully'], 'success');
     },
     error: err => {
       console.log(err);
       if (err.error) {
-        console.log(JSON.parse(err.error).message);
+        this.notificationService.show([err.error.message], 'error');
       } else {
         console.log('Error with status: ' + err.status);
       }
     }
   });
-  console.log('Category Name:', this.categoryName);
 
   this.resetForm();
 }

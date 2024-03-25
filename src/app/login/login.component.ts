@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
+import { NotificationService } from '../services/Notification/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,11 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   role?: string;
 
-  constructor(private authService: AuthService, private storageService: StorageService) {}
+  constructor(
+    private authService: AuthService,
+    private storageService: StorageService,
+    private notificationService : NotificationService
+    ) {}
 
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
@@ -37,10 +42,13 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.role = this.storageService.getUser().role;
         this.reloadPage();
+        this.notificationService.show(['You have been successfully logged in'], 'success');
       },
       error: (err) => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+        this.notificationService.show([err.error.message], 'error');
+
       }
     });
   }
